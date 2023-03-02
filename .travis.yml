@@ -24,4 +24,7 @@ deploy:
   bucket_name: "the-target-S3-bucket"
 
   on:
-    branches: main
+  repo: aaqilkhoja/swe1-app   
+
+  branch:
+   - main
