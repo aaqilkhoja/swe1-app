@@ -22,3 +22,6 @@ deploy:
   app: "swePolls"
   env: "envPolls"
   bucket_name: "the-target-S3-bucket"
+
+  on:
+    branches: main
