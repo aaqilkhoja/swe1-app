@@ -10,3 +10,15 @@ before_script:
 
 script:
        - python sweDjangoTutorial/mysite/manage.py test
+
+
+deploy:
+  provider: elasticbeanstalk
+  access_key_id:
+    secure: "Encrypted AKIA2UELZU43NC3ESGHK="
+  secret_access_key:
+    secure: "Encypted pf3jf4gr+WdWM4OcbcZDsIsvgi+oUsRqGALEc5Ba="
+  region: "us-east-1"
+  app: "swePolls"
+  env: "envPolls"
+  bucket_name: "the-target-S3-bucket"
