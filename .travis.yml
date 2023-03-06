@@ -6,13 +6,13 @@ install:
        - pip install -r requirements.txt
 
 before_script:
-       - python sweDjangoTutorial/mysite/manage.py migrate
+       - python mysite/manage.py migrate
        - python -m pip install flake8
 script:
-       - python sweDjangoTutorial/mysite/manage.py test
+       - python mysite/manage.py test
        - black --check .
        - flake8 .
-       - coverage run sweDjangoTutorial/mysite/manage.py test
+       - coverage run mysite/manage.py test
        - coveralls
 
 before_deploy:
@@ -25,16 +25,16 @@ before_deploy:
 deploy:
   provider: elasticbeanstalk
   access_key_id:
-    secure: "Encrypted ="
+    secure: ${AWS_ACCESS_KEY}
   secret_access_key:
-    secure: "Encypted ="
-  region: "us-east-1"
-  app: "swePolls"
-  env: "envPolls"
-  bucket_name: "the-target-S3-bucket"
+    secure: ${AWS_SECRET_KEY}
+  region: "us-west-2"
+  app: "assignment-2"
+  env: "assignment2-env"
+  bucket_name: "elasticbeanstalk-us-west-2-730437625654"
 
   on:
-  repo: aaqilkhoja/swe1-app   
+    repo: aaqilkhoja/swe1-app   
 
-  branch:
-   - main
+    branch:
+     - main
