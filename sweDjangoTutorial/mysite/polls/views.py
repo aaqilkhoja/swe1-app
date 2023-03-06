@@ -1,9 +1,10 @@
 from django.shortcuts import render
-from django.http import HttpResponse
-from django.template import loader
-from . import views
+
+# from django.http import HttpResponse
+# from django.template import loader
+# from . import views
 from .models import Question, Choice
-from django.shortcuts import get_object_or_404, render
+from django.shortcuts import get_object_or_404
 from django.urls import reverse
 from django.http import HttpResponseRedirect
 from django.views import generic
@@ -53,4 +54,4 @@ def vote(request, question_id):
 
 # def index(request):
 #   latest_question_list = Question.objects.order_by('-pub_date')[:5]
-## return render(request, 'polls/index.html', context)
+# return render(request, 'polls/index.html', context)

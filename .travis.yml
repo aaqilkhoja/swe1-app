@@ -10,7 +10,8 @@ before_script:
 
 script:
        - python sweDjangoTutorial/mysite/manage.py test
-
+       - black --check .
+       - flake8 .
 
 deploy:
   provider: elasticbeanstalk
