@@ -12,7 +12,7 @@ script:
        - python sweDjangoTutorial/mysite/manage.py test
        - black --check .
        - flake8 .
-       - coverage run mysite/manage.py test
+       - coverage run sweDjangoTutorial/mysite/manage.py test
        - coveralls
 
 
