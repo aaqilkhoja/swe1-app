@@ -12,6 +12,9 @@ script:
        - python sweDjangoTutorial/mysite/manage.py test
        - black --check .
        - flake8 .
+       - coverage run mysite/manage.py test
+       - coveralls
+
 
 deploy:
   provider: elasticbeanstalk
