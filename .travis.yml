@@ -7,7 +7,7 @@ install:
 
 before_script:
        - python sweDjangoTutorial/mysite/manage.py migrate
-
+       - python -m pip install flake8
 script:
        - python sweDjangoTutorial/mysite/manage.py test
        - black --check .
