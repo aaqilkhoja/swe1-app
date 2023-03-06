@@ -15,6 +15,12 @@ script:
        - coverage run sweDjangoTutorial/mysite/manage.py test
        - coveralls
 
+before_deploy:
+       - cd mysite
+
+
+
+
 
 deploy:
   provider: elasticbeanstalk
